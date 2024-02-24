@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>Editing Book</h2>
+      <%= render 'layouts/error', model: @book %>
+      <%= form_with model: @book, html: {class: "form-group", role: "form"} do |f| %>
+        <div class="form-group">
+          <label for="inputTitle">Title</label>
+          <%= f.text_field :title, autofocus: true, id:"inputTitle", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label for="inputBody">Opinion</label>
+          <%= f.text_field :body, autofocus: true, id:"inputbody", class: "form-control"%>
+        </div>
+        <%= f.submit "Update Book", class: "btn btn-success"  %>
+      <% end %>
+        <div>
+          <%= link_to "Show", book_path(@book) %>
+          |
+          <%= link_to "Back", books_path %>
+       </div>
+    </div>
+  </div>
+</div>
